@@ -1,2 +1,25 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<form class="red" [formGroup]="form">
+  <mat-checkbox formControlName="isBlueEnabled">Enable blue</mat-checkbox>
+  <div class="blue" formGroupName="blue">
+    <mat-form-field>
+      <mat-label>Blue</mat-label>
+      <input matInput placeholder="Enter your name" formControlName="blueInput">
+    </mat-form-field>
+    <mat-checkbox formControlName="isGreenEnabled">Enable green</mat-checkbox >
+    <div class="green" formGroupName="green">
+      <mat-form-field>
+        <mat-label>Green</mat-label>
+        <input matInput placeholder="Enter your name" formControlName="greenInput">
+      </mat-form-field>
+      <mat-checkbox formControlName="isYellowEnabled">Enable yellow</mat-checkbox>
+      <div class="yellow" formGroupName="yellow">
+        <mat-form-field>
+          <mat-label>Yellow</mat-label>
+          <input matInput placeholder="Enter your name" formControlName="yellowInput">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>
+
+{{form.value | json}}
